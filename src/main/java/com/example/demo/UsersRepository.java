@@ -18,6 +18,10 @@ public class UsersRepository {
         users.add(new User("Michał", "Kowalski", 23));
         users.add(new User("Twoja", "Stara", 69));
         users.add(new User("Twoja", "Starsza", 100));
+        users.add(new User("Piotr", "Nowak", 35));
+        users.add(new User("Piotr", "Jachon", 42));
+        users.add(new User("Andrzej", "Jachon", 36));
+        users.add(new User("Jakis", "Ziomek", 36));
     }
 
     public List<User> getAll() {
@@ -26,6 +30,10 @@ public class UsersRepository {
 
     public void add(User user) {
         users.add(user);
+    }
+
+    public void delete(User user){
+        users.remove(user);
     }
 
 }
