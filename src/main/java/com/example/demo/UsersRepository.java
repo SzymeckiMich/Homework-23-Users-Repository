@@ -16,6 +16,8 @@ public class UsersRepository {
     public UsersRepository() {
         users = new ArrayList<>();
         users.add(new User("Michał", "Kowalski", 23));
+        users.add(new User("Twoja", "Stara", 69));
+        users.add(new User("Twoja", "Starsza", 100));
     }
 
     public List<User> getAll() {
