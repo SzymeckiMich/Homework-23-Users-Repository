@@ -13,16 +13,13 @@ public class UserController {
 
     private UsersRepository usersRepository;
 
-    //    @Autowired
+//    @Autowired
     public UserController(UsersRepository usersRepository) {
         this.usersRepository = usersRepository;
     }
 
-
-    //    @GetMapping("/users")
-//    @PostMapping("/users")
     @ResponseBody
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @PostMapping("/users")
     public String users() {
         List<User> users = usersRepository.getAll();
 
@@ -34,9 +31,9 @@ public class UserController {
         }
         return result;
     }
-    
 
-    @RequestMapping("/add")
+
+    @PostMapping("/add")
     public String addUser(HttpServletRequest request) {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -45,11 +42,11 @@ public class UserController {
         int ageInt = Integer.parseInt(age);
 
         if (StringUtils.isEmpty(firstName)) {
-            return "/error.html";
+            return "redirect:/error.html";
         } else {
             User user = new User(firstName, lastName, ageInt);
             usersRepository.add(user);
-            return "/success.html";
+            return "redirect:/success.html";
         }
     }
 }
