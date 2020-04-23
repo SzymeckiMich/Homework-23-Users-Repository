@@ -1,14 +1,10 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Controller
@@ -66,8 +62,8 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("/removeFirstName")
-    public String removeWithFirstname(@RequestParam String phrase) {
-        return remove(filterByLastName(phrase));
+    public String removeWithFirstName(@RequestParam String phrase) {
+        return remove(filterByFirstName(phrase));
     }
 
     @ResponseBody

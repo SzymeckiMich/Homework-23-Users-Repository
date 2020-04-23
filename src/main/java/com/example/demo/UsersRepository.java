@@ -16,12 +16,10 @@ public class UsersRepository {
     public UsersRepository() {
         users = new ArrayList<>();
         users.add(new User("Michał", "Kowalski", 23));
-        users.add(new User("Twoja", "Stara", 69));
-        users.add(new User("Twoja", "Starsza", 100));
         users.add(new User("Piotr", "Nowak", 35));
         users.add(new User("Piotr", "Jachon", 42));
         users.add(new User("Andrzej", "Jachon", 36));
-        users.add(new User("Jakis", "Ziomek", 36));
+        users.add(new User("Roman", "Górski", 36));
     }
 
     public List<User> getAll() {
