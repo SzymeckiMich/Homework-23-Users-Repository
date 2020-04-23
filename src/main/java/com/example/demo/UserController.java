@@ -16,7 +16,6 @@ public class UserController {
 
     private UsersRepository usersRepository;
 
-    //    @Autowired
     public UserController(UsersRepository usersRepository) {
         this.usersRepository = usersRepository;
     }
